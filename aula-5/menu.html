@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Acessibilidade Avançada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+        <h1>Bem-vindo à Nossa Página</h1>
+        <p>Este é um exemplo de página web com um menu de acessibilidade aprimorado.</p>
+    </header>
+
+    <main id="main-content">
+        <h2>Conteúdo Principal</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h3>Subtítulo Importante</h3>
+        <p>Aqui está mais um parágrafo de texto para demonstrar as opções de acessibilidade. Aumente o contraste, mude o tamanho da fonte ou ative a fonte legível para ver as mudanças em tempo real.</p>
+        
+        <ul>
+            <li>Item da lista 1</li>
+            <li>Item da lista 2</li>
+            <li>Item da lista 3</li>
+        </ul>
+
+        <button>Um botão de exemplo</button>
+        <a href="#">Um link de exemplo</a>
+        <input type="text" placeholder="Campo de texto">
+    </main>
+
+    <footer style="margin-top: 50px; text-align: center; color: #777;">
+        <p>&copy; 2023 Página de Exemplo. Todos os direitos reservados.</p>
+    </footer>
+
+    <nav class="acessibilidade-menu" aria-label="Menu de Opções de Acessibilidade">
+        <button id="abrir-menu-btn" aria-expanded="false" aria-controls="opcoes-acessibilidade" title="Abrir/Fechar Menu de Acessibilidade">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-accessibility">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span class="sr-only">Menu de Acessibilidade</span>
+        </button>
+        
+        <div id="opcoes-acessibilidade" class="opcoes-menu-panel" aria-hidden="true">
+            <h3>Opções de Acessibilidade</h3>
+            
+            <div class="opcao-grupo">
+                <label for="font-size-slider">Tamanho da Fonte:</label>
+                <input type="range" id="font-size-slider" min="80" max="150" value="100" aria-valuemin="80" aria-valuemax="150" aria-valuenow="100" aria-label="Ajustar tamanho da fonte">
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="reset-font-size-btn" class="reset-btn" aria-label="Redefinir tamanho da fonte">Resetar Fonte</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <p>Contraste:</p>
+                <button id="contraste-padrao-btn" data-contraste="padrao" aria-pressed="true">Padrão</button>
+                <button id="contraste-alto-btn" data-contraste="alto" aria-pressed="false">Alto</button>
+                <button id="contraste-escuro-btn" data-contraste="escuro" aria-pressed="false">Escuro</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="dark-mode-btn" aria-pressed="false">Modo Escuro</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="mono-btn" aria-pressed="false">Monocromático</button>
+            </div>
+            
+            <div class="opcao-grupo">
+                <button id="inverted-colors-btn" aria-pressed="false">Inverter Cores</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="spacing-btn" aria-pressed="false">Aumentar Espaçamento</button>
+            </div>
+            
+            <div class="opcao-grupo">
+                <button id="readable-font-btn" aria-pressed="false">Fonte Legível</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="reading-guide-btn" aria-pressed="false">Guia de Leitura</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="focus-highlight-btn" aria-pressed="false">Destacar Foco</button>
+            </div>
+
+            <div class="opcao-grupo">
+                <button id="reset-all-btn" class="reset-btn" aria-label="Redefinir todas as configurações de acessibilidade">Resetar Tudo</button>
+            </div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

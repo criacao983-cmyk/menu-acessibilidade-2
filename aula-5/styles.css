@@ -1,0 +1,342 @@
+/* Fontes - Adicione a fonte Open Dyslexic se desejar, ou use uma sans-serif padrão */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); /* Exemplo de fonte sans-serif */
+
+/* Base Styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    z-index: 9999;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+/* Accessibility Menu Styles */
+.acessibilidade-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse; /* Opções acima do botão */
+    align-items: flex-end;
+}
+
+.acessibilidade-menu button#abrir-menu-btn {
+    background-color: #28a745; /* Cor verde para o botão principal */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 10px; /* Espaço entre o botão e o painel */
+}
+
+.acessibilidade-menu button#abrir-menu-btn svg {
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.opcoes-menu-panel {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    max-height: 80vh; /* Para garantir que caiba na tela */
+    overflow-y: auto; /* Permite scroll se houver muitas opções */
+    display: none; /* Escondido por padrão */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.opcoes-menu-panel.is-visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.opcoes-menu-panel h3 {
+    margin-top: 0;
+    color: #007bff;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.opcao-grupo {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.opcao-grupo:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.opcao-grupo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.opcao-grupo button {
+    width: auto;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.opcao-grupo .reset-btn {
+    background-color: #dc3545; /* Cor vermelha para reset */
+}
+
+.opcao-grupo .reset-btn:hover {
+    background-color: #c82333;
+}
+
+/* Indicador de estado para botões */
+button[aria-pressed="true"] {
+    background-color: #0056b3; /* Cor mais escura quando ativo */
+    border: 1px solid #0056b3;
+}
+
+
+/* Accessibility Feature Styles (aplicadas ao body) */
+
+/* Contraste Alto */
+body.contraste-alto {
+    background-color: #000;
+    color: #fff;
+}
+body.contraste-alto h1, body.contraste-alto h2, body.contraste-alto h3 {
+    color: #ffff00;
+}
+body.contraste-alto a {
+    color: #00ffff;
+}
+body.contraste-alto button {
+    background-color: #ffff00;
+    color: #000;
+    border-color: #ffff00;
+}
+body.contraste-alto .opcoes-menu-panel {
+    background-color: #222;
+    border-color: #444;
+    color: #fff;
+}
+body.contraste-alto .opcoes-menu-panel h3 {
+    color: #ffff00;
+}
+body.contraste-alto .acessibilidade-menu button#abrir-menu-btn {
+    background-color: #ffff00;
+    color: #000;
+}
+body.contraste-alto .acessibilidade-menu button#abrir-menu-btn svg {
+    color: #000;
+}
+
+
+/* Contraste Escuro */
+body.contraste-escuro {
+    background-color: #333;
+    color: #eee;
+}
+body.contraste-escuro h1, body.contraste-escuro h2, body.contraste-escuro h3 {
+    color: #99ccff;
+}
+body.contraste-escuro a {
+    color: #88bbff;
+}
+body.contraste-escuro button {
+    background-color: #555;
+    color: #eee;
+}
+body.contraste-escuro .opcoes-menu-panel {
+    background-color: #444;
+    border-color: #666;
+    color: #eee;
+}
+body.contraste-escuro .opcoes-menu-panel h3 {
+    color: #99ccff;
+}
+body.contraste-escuro .acessibilidade-menu button#abrir-menu-btn {
+    background-color: #99ccff;
+    color: #333;
+}
+body.contraste-escuro .acessibilidade-menu button#abrir-menu-btn svg {
+    color: #333;
+}
+
+/* Modo Escuro (Dark Mode) */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #8bbce0;
+}
+body.dark-mode a {
+    color: #a0d0ef;
+}
+body.dark-mode button {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+body.dark-mode .opcoes-menu-panel {
+    background-color: #2a2a2a;
+    border-color: #4a4a4a;
+    color: #e0e0e0;
+}
+body.dark-mode .opcoes-menu-panel h3 {
+    color: #a0d0ef;
+}
+body.dark-mode .acessibilidade-menu button#abrir-menu-btn {
+    background-color: #8bbce0;
+    color: #1a1a1a;
+}
+body.dark-mode .acessibilidade-menu button#abrir-menu-btn svg {
+    color: #1a1a1a;
+}
+
+
+/* Monocromático */
+body.monocromatico {
+    filter: grayscale(100%);
+}
+
+/* Inverter Cores */
+body.cores-invertidas {
+    filter: invert(100%);
+    background-color: #000; /* Garante que o fundo não vire branco puro */
+}
+body.cores-invertidas .acessibilidade-menu button#abrir-menu-btn {
+    filter: invert(100%); /* Inverte o botão de volta para visibilidade */
+}
+body.cores-invertidas .opcoes-menu-panel {
+    filter: invert(100%); /* Inverte o menu de volta para visibilidade */
+}
+
+
+/* Aumentar Espaçamento */
+body.maior-espacamento p,
+body.maior-espacamento li,
+body.maior-espacamento h1,
+body.maior-espacamento h2,
+body.maior-espacamento h3 {
+    letter-spacing: 0.05em; /* Pequeno espaçamento entre letras */
+    word-spacing: 0.1em; /* Pequeno espaçamento entre palavras */
+    line-height: 2em; /* Altura da linha maior */
+    margin-bottom: 1.5em; /* Espaçamento entre parágrafos maior */
+}
+
+/* Fonte Legível */
+body.fonte-legivel {
+    font-family: 'Open Dyslexic', 'Arial', sans-serif !important; /* Exemplo, se a fonte estiver carregada */
+    /* Se não tiver Open Dyslexic, 'Open Sans' já é uma boa alternativa */
+}
+
+/* Guia de Leitura */
+.reading-guide-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Altura da linha de foco */
+    background-color: rgba(0, 123, 255, 0.2); /* Cor da linha de foco */
+    pointer-events: none; /* Não interfere com cliques */
+    z-index: 9998;
+    display: none;
+    transition: top 0.1s ease-out;
+}
+
+body.has-reading-guide .reading-guide-line {
+    display: block;
+}
+
+/* Destacar Foco */
+body.destacar-foco *:focus {
+    outline: 3px solid #ffc107 !important; /* Foco amarelo brilhante */
+    outline-offset: 2px;
+}
+body.destacar-foco a:focus,
+body.destacar-foco button:focus,
+body.destacar-foco input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.5); /* Sombra para destaque extra */
+}
+
+
+/* WAI-ARIA para leitores de tela */
+.acessibilidade-menu button[aria-expanded="true"] {
+    /* Pode adicionar um estilo visual se o menu estiver expandido */
+}
